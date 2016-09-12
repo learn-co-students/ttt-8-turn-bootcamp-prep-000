@@ -1,1 +1,13 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn.rb'
+
+# Code your CLI Here
+puts "Welcome to Tic Tac Toe!"
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+display_board(board)
+turn(board)
+puts "Please enter 1-9:"
+input = gets.strip
+move(board, input_to_index(input), "X")
+display_board(board)
