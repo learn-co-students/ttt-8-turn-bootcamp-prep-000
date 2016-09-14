@@ -1,1 +1,8 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn.rb'
+
+turn
+
+input = gets.strip
+index =
+input_index(input)
