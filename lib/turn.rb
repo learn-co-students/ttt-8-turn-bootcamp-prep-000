@@ -21,7 +21,6 @@ def input_to_index(user_input) #this method converts the user_input into the 0-8
   user_input = user_input.to_i # assign user_input to (user_input.to_i), which converts the user_input to an integer
   user_input = user_input-1 # assign user_input to (user_input-1), which substracts 1 from the user_input
   #the above line with the (user_input-1) also returns -1 for strings without integers
-  index = user_input # assign variable index to user_input, for valid_move method <<<<------ correct?
 end
 
 
@@ -75,13 +74,13 @@ end #end of method
 
 ############
 
-def turn(board) ########## -------- <<<<<<< keep working on the turn method
-  puts "Please enter 1-9:" #### add to this, invoke other methods within #turn
+def turn(board)
+  puts "Please enter 1-9:" # add to this, invoke other methods within #turn
   user_input = gets # gets move from user
-  input_to_index(user_input) # calls the input_to_index method, to convert the user_input into the 0-8 index
+  index = input_to_index(user_input) ### <<<---- calls the input_to_index method, to convert the user_input into the 0-8 index, and assigns value of input_to_index(user_input) to local variable 'index'
   if valid_move?(board, index) == true # if valid_move? returns true, meaning we've validated the move...
     move(board, index, token="X") #...then we run the move method
     display_board(board) #...and display the board
-  else turn(board)
-  end
-end
+  else turn(board) # if the user's move wasn't valid, we ruturnn this function again
+  end # end if...else statement
+end # end turn method
