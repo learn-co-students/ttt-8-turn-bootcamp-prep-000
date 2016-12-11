@@ -38,6 +38,7 @@ def turn(board)
   if valid_move?(board, index) == true
     move(board, index, value = "X")
   else
+    puts "That's not a valid move, or position is taken."
     turn(board)
   end
   display_board(board)
