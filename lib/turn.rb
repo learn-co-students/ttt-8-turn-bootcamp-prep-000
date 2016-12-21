@@ -6,7 +6,7 @@ def turn(board)
     move(board, index)
     display_board(board)
   else
-    return "invalid"
+    puts "invalid"
   end
   "Please enter 1-9:"
 end
