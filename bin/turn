@@ -1,1 +1,18 @@
+# Learn.co Bootcamp Prep - Ruby Fundamentals - 18: Tic Tac Toe Turn
+
 #!/usr/bin/env ruby
+
+# Link to lib
+require_relative '../lib/turn'
+
+# Initialise 'board'
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+# Welcome user
+puts "Welcome to Tic Tac Toe!"
+
+# Print the current game state.
+display_board(board)
+
+# Call turn method
+turn(board)
