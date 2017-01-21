@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
 
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -8,6 +9,11 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
+def input_to_index(i)
+  n = i.to_i
+  n - 1
+
+end
 # code your #valid_move? method here
 def valid_move? (board, index)
   if index.between?(0, 8)
@@ -29,4 +35,20 @@ def position_taken? (board, index)
     true
   end
 
+end
+
+def move (board, index, turn = "X")
+  board[index] = turn
+end
+
+def turn(board)
+  puts "Please enter 1-9:"
+  gets_index = gets.strip
+  index = input_to_index(gets_index)
+    if index.between?(0, 8) && valid_move?(board, index)
+      move(board, index)
+    else
+      turn(board)
+    end
+  display_board(board)
 end
