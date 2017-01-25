@@ -6,11 +6,13 @@ def turn(board)
     move(board,pos)
     puts pos
     display_board(board)
+  else
+    turn(board)
   end
 end
 
 def move(board, index, char="X")
-  board[index-1] = char
+  board[index] = char
   board
 end
 
@@ -36,5 +38,5 @@ def position_taken?(board, index)
 end
 
 def input_to_index(num)
-  num.to_i
-end 
+  index = num.to_i - 1
+end
