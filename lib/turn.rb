@@ -10,7 +10,7 @@ def display_board(board)
 end
 
 puts "Where would you like to move? Please pick a number 1-9."
-user_input = gets.strip
+# user_input = gets.strip
 
 index = 0
 def input_to_index(user_input)
@@ -32,11 +32,25 @@ def position_taken?(board,index)
 end
 
 def valid_move?(board,index)
-  if position_taken? == false && index.between?(
+  if position_taken?(board,index) == false && index.between?(
     0,board.length
     )
     return true
   else
     return false
+  end
+end
+
+def turn(board)
+  puts "Please enter 1-9:"
+  display_board(board)
+  user_input=gets.strip
+  index = input_to_index(user_input)
+
+  if valid_move?(board,index)
+    move(board,index)
+    display_board(board)
+  else
+    turn(board)
   end
 end
