@@ -1,3 +1,4 @@
+#require 'pry'
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -14,16 +15,19 @@ def input_to_index(user_input)
 return user_input.to_i-1
   end
 
-  def move(board, input_to_index, char = "X")
-    board[input_to_index] = char
+  def move(board, index, char = "X")
+  #index = index.to_i - 1
+    board[index] = char
     
   end
 
   def valid_move?(board, index)
-    #index = index.to_i - 1
-    if position_taken?(board, index) == false && index.between?(0, 8)
-      return true
-    else false
+    #binding.pry
+  #  index = index.to_i - 1
+    if !position_taken?(board, index) && index.between?(0, 8)
+      true
+    else
+      false
     end
     end
 
@@ -38,10 +42,10 @@ return user_input.to_i-1
 
 def turn(board)
   puts "Please enter 1-9:"
-  user_input = gets.strip.to_i
-  input_to_index(user_input)
-  if valid_move?(board, index) == true
-    return move(board, index, char = "X")
+  user_input = gets.strip
+  index = input_to_index(user_input)
+  if valid_move?(board, index)
+    move(board, index)
     display_board(board)
   else 
     puts "Invalid move"
