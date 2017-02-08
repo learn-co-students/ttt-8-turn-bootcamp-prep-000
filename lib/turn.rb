@@ -42,7 +42,10 @@ def turn(board)
   input_to_index(user_input)
   if valid_move?(board, index) == true
     return move(board, index, char = "X")
-  else turn(board)
+    display_board(board)
+  else 
+    puts "Invalid move"
+    turn(board)
   end
   display_board(board)
 end
