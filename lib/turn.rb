@@ -15,12 +15,12 @@ def valid_move?(board, index)
 end
 
 # code your input_to_index and move method here!
-def input_to_index(num_str)
-  return num_str.to_i - 1
+def input_to_index(user_input)
+  return user_input.to_i - 1
 end
 
-def move(board, index, char="X")
-  board[index] = char
+def move(board, index, current_player="X")
+  board[index] = current_player
   return board
 end
 
