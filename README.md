@@ -58,7 +58,6 @@ This method should accept a board, an index from the user (which was converted f
 ### Workflow
 
 Start with building those methods (or copying code you might have written before) and making the first few tests in `spec/turn_spec.rb` pass. You can use the `learn --fail-fast` or `rspec --fail-fast` mode to only see 1 failure at a time and allow you to work through those method definitions.
-
 You'll then need to build your `#turn` method. Before building a full `#turn` method according to the failing tests, let's setup a quick CLI so that you can watch your `#turn` method perform as you build, visually confirming it behaves as expected.
 
 Open `bin/turn`, you'll see that it is already setup with `#!/usr/bin/env ruby` so you can execute it by running `./bin/turn` or `ruby bin/turn` from your terminal. It currently does nothing (because it has no code), but try it out just for fun.
