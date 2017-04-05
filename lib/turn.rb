@@ -1,13 +1,12 @@
 def turn(board)
-  oldboard = board
-  while oldboard == board
   puts "Please enter 1-9:"
-  input = gets.strip
-  index = input.input_to_index
+  input = gets.strip.to_i
+  index = input_to_index(input)
   if valid_move?(board, index)
     move(board,index)
   else
     puts "That's not a valid move, please enter 1-9!"
+    turn(board)
   end
 end
 
@@ -41,10 +40,11 @@ def display_board(board)
 end
 
 def input_to_index(input)
-  index = input.to_i-1
-  return index
+  idx = input.to_i-1
+  return idx
 end
 
 def move(board, index, char = "X")
   board[index] = char
+  display_board(board)
 end
