@@ -31,13 +31,22 @@ def move(board, index, token = 'X')
 end
 
 def turn(board)
-  puts "Please enter 1-9:"
-  user_move = input_to_index(gets.chomp)
 
-  until valid_move?(board, user_move)
+  loop do
     puts "Please enter 1-9:"
     user_move = input_to_index(gets.chomp)
+    if valid_move?(board, user_move)
+      move(board, user_move)
+      display_board(board)
+      break
+    end
   end
-  move(board, user_move)
-  display_board(board)
+
+##  Deprecated code from first solution
+  # until valid_move?(board, user_move)
+  #  puts "Please enter 1-9:"
+  #  user_move = input_to_index(gets.chomp)
+  # end
+
+
 end
