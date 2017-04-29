@@ -1,1 +1,8 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+board = []
+9.times do
+  board << " "
+end
+
+turn(board)
