@@ -81,8 +81,8 @@ describe './lib/turn.rb' do
       allow(self).to receive(:gets).and_return("1")
 
       expect($stdout).to receive(:puts).with("Please enter 1-9:")
-
       turn(board)
+
     end
 
     it 'gets the user input' do
