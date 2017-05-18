@@ -1,1 +1,14 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn'
+# You never need to give the .rb extension to a path for require_relative, Ruby assumes you mean a .rb file.
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+
+display_board(board)
+
+turn(board)
+
+# valid_move?(board, index)
