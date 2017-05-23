@@ -3,11 +3,5 @@ require_relative'../lib/turn'
 
 board = [" "," "," "," "," "," "," "," "," "]
 puts "Welcome to Tic Tac Toe!"
-puts "Where would you like to go?"
-user_input = gets.strip
-if user_input == valid_move?
-  move(array = board, index = input_to_index(user_input), char = 'X')
-  display_board(board)
-while valid_move?(board, index) == false
-  return "That's not a valid move"
-end
+display_board(board)
+turn(board)
