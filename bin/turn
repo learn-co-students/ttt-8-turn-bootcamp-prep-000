@@ -1,1 +1,47 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+board = [" "," "," "," "," "," "," "," "," "]
+puts "Welcome to Tic Tac Toe!"
+#puts "move by position 1-9"
+#user_input=gets.to_i
+display_board(board)
+turn(board)
+#until valid_move?(board,index)
+#      turn(board)
+#    end
+#       move(board,index,value="X")
+#       display_board(board)
+
+
+
+
+
+
+
+       #while  valid_move?(board,index)
+
+            # turn(board)
+
+
+
+
+#move(board,index,value="X")
+#display_board(board)
+#move(board,0,value="X")
+#display_board(board)
+
+  #counter=counter+1
+
+
+#display_board(board)
+
+
+#loop do
+#input_to_index(user_input)
+#if index.between?(0,8)
+#   input_to_index(user_input)
+#   valid_move?(board,index)
+#   move(board,index,value="X")
+#   display_board(board)
+#else turn(board)
+#end
