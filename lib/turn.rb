@@ -6,6 +6,30 @@ def display_board(board)
     puts " #{board[6]} | #{board[7]} | #{board[8]} "
   end
 
+def turn(board)
+begin
+  puts "Please enter 1-9:"
+  index = gets.strip
+  index_int = input_to_index(index)
+
+end until valid_move?(board, index_int)
+
+    move(board, index_int)
+    display_board(board)
+
+# #alternate coding
+# puts "Please enter 1-9:"
+# index = gets.strip
+# index_int = input_to_index(index)
+# if valid_move?(board, index_int)
+#     move(board, index_int)
+# else turn(board)
+# end
+
+end
+
+
+
 def input_to_index(index)
   position = index.to_i - 1
 end
