@@ -7,11 +7,7 @@ def turn(board)
     move(board, index, token="X")
     display_board(board)
   else
-    until valid_move?(board, index) == true
-      puts "Please enter 1-9:"
-      input = gets.chomp
-      index = input_to_index(input)
-    end
+    turn(board)
   end
 
 end
