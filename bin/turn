@@ -1,1 +1,7 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+board_mine = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+display_board(board_mine)
+turn(board_mine)
