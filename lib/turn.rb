@@ -9,6 +9,15 @@ print " #{board[6]} ","|", " #{board[7]} ","|", " #{board[8]} """
 puts
 end
 
+def input_to_index(input)
+"#{input}".to_i-1
+end
+
+
+def move(board, index, char = "X")
+  board[index] = char
+end
+
 def valid_move?(board,index)
   if index.between?(0,8) && position_taken?(board,index) == false
     true
@@ -17,17 +26,6 @@ def valid_move?(board,index)
 end
 end
 
-
-def move(board, index, char = "X")
-  board[index] = char
-end
-
-def input_to_index(input)
-"#{input}".to_i-1
-end
-
-
-# re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
 def position_taken?(board,index)
 if board[index] == " " || board[index] == "" || board[index] == nil
     false
