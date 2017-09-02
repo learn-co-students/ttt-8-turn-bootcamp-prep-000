@@ -19,5 +19,25 @@ def position_taken?(board,index)# cod
 end
 
 def valid_move?(board,index)
-  index.between?(-1,9) && !position_taken?(board,index)
+  index.between?(0,8) && !position_taken?(board,index)
+end
+
+def move(board,index,player="X")
+  board[index] = "#{player}"
+end
+
+def turn(board)
+  puts "Please enter 1-9:"
+  the_move = gets.chomp.strip.to_i
+  index = input_to_index(the_move)
+  if valid_move?(board,index)
+    puts "Move valid."
+    move(board,index)
+    display_board(board)
+  else
+    puts "Move invalid. Try again."
+    turn(board)
+  end
+
+  #turn(board)
 end
