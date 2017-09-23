@@ -22,33 +22,11 @@ def valid_move?(board, index)
   end
 end
 
-# def select_char
-#   puts "Select your char: 'X' or 'O'?"
-#   char = gets.strip
-#   if char == "X" || "O"
-#     char
-#   else
-#     nil
-#   end
-# end
-
 def move(board, index, char = "X")
   board[index] = char
 end
 
 def turn(board)
-  # puts "Please enter 1-9:"
-  # input = gets.strip
-  # input_to_index(input)
-  # while !valid_move?(board, input_to_index(input))
-  #   puts "Please enter 1-9:"
-  #   input = gets.strip
-  #   input_to_index(input)
-  # end
-  #
-  # move(board, input_to_index(input), char = "X")
-  # display_board(board)
-
   # get input
   # convert input to index
   # if index is valid
@@ -60,7 +38,8 @@ def turn(board)
   input = gets.strip
   input = input_to_index(input)
   if valid_move?(board, input)
-    def move(board, input, char = "X")
+    move(board, input, char = "X")
+    display_board(board)
   else
     while !valid_move?(board, input_to_index(input))
       puts "Please enter 1-9:"
