@@ -37,20 +37,35 @@ def move(board, index, char = "X")
 end
 
 def turn(board)
-  puts "Please enter 1-9:"
-  input = gets.strip
-  input_to_index(input)
-  while !valid_move?(board, input_to_index(input))
-    puts "Please enter 1-9:"
-    input = gets.strip
-    input_to_index(input)
-  end
-  # if valid_move?(board, input_to_index(input))
-  move(board, input_to_index(input), char = "X")
-  display_board(board)
-  # else
+  # puts "Please enter 1-9:"
+  # input = gets.strip
+  # input_to_index(input)
+  # while !valid_move?(board, input_to_index(input))
   #   puts "Please enter 1-9:"
   #   input = gets.strip
   #   input_to_index(input)
   # end
+  #
+  # move(board, input_to_index(input), char = "X")
+  # display_board(board)
+
+  # get input
+  # convert input to index
+  # if index is valid
+  # make the move for input
+  # else
+  # ask for input again until you get a valid input
+  # end
+  puts "Please enter 1-9:"
+  input = gets.strip
+  input = input_to_index(input)
+  if valid_move?(board, input)
+    def move(board, input, char = "X")
+  else
+    while !valid_move?(board, input_to_index(input))
+      puts "Please enter 1-9:"
+      input = gets.strip
+      input_to_index(input)
+    end
+  end
 end
