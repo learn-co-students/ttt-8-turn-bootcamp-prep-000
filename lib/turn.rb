@@ -4,13 +4,16 @@ def turn(board)
   index = input_to_index(input)
     if valid_move?(board, index)
       move(board, index, token="X")
+      display_board(board)
     else
-      until valid_move?(board, index)
-        input = gets.strip
-        break
-      end
+      turn(board) # this is called recursion!
     end
-    display_board(board)
+    #   until valid_move?(board, index)
+    #     input = gets.strip
+    #     break
+    #   end
+    # end
+    # display_board(board)
 end
 
 #define helper methods below
