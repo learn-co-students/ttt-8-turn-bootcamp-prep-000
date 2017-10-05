@@ -33,18 +33,18 @@ def move(board, index, token = "X")
 end
 
 def turn(board)
-  puts "Please enter 1-9"
+  puts "Please enter 1-9:"
   user_move = gets.strip
   user_index = input_to_index(user_move)
 
   until valid_move?(board, user_index)
     puts "That is an invalid move."
-    puts "Please enter 1-9."
+    puts "Please enter 1-9:"
     user_move = gets.strip
     user_index = input_to_index(user_move)
   end
 
-  move(board,index)
+  move(board, user_index)
 
   display_board(board)
 end
