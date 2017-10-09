@@ -23,3 +23,14 @@ def position_taken?(board, position)
   (board[position] == "X" || board[position] == "O") ?
   true : false
 end
+
+def turn(board)
+  puts "Please enter 1-9"
+  input = input_to_index(gets.strip)
+  if valid_move?(board, input)
+    move(board, input)
+    display_board(board)
+  else
+    turn(board)
+  end
+end
