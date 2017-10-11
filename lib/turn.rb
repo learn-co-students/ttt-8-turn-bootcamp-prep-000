@@ -50,8 +50,7 @@ def turn(board)
     move(board, index, value = "X")
     display_board(board)
   else
-   until valid_move?(board, index) == true
+    puts "That was an invalid move"
      turn(board)
-   end
   end
 end
