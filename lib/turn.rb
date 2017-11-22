@@ -1,13 +1,9 @@
 def display_board(board)
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
-  puts " X | X | X "
-  puts " X | X | O "
-  puts " X | O | O "
-  puts " O | O | O "
-  puts " O | O | X "
-  puts " O | X | X "
-  puts " X | O | X "
-  puts " O | X | O "
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts "-----------"
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
 def input_to_index(user_input)
@@ -38,5 +34,15 @@ def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
   index = input_to_index(user_input)
-  valid_move?(board, index) == true
+
+  if valid_move?(board, index) == true
+    move(board, index, character="X")
+    display_board(board)
+  else
+    #ask for input again until it's valid_move
+    #puts "Please enter 1-9:"
+    #user_input = gets.strip
+    #index = input_to_index(user_input)
+    turn(board)
+  end
 end
