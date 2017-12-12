@@ -1,1 +1,5 @@
+require_relative '../lib/turn'
+
 #!/usr/bin/env ruby
+# puts "Please enter 1-9:"
+# input = gets.strip
