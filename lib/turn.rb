@@ -1,12 +1,9 @@
-def display_board(arr)
-  row1= arr[0..2].join(' | ')
-  row2= arr[3..5].join(' | ')
-  row3= arr[6..8].join(' | ')
-  puts " #{row1} "
-  puts '-' * 11
-  puts " #{row2} "
-  puts '-' * 11
-  puts " #{row3} "
+def display_board(board)
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts "-----------"
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts "-----------"
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
 def input_to_index(str)
@@ -18,67 +15,21 @@ def valid_move?(board, index)
 end
 
 def position_taken?(board, index)
-  blanks = ['', ' ', nil]
-  !blanks.include?(board[index])
+  !['', ' ', nil].include?(board[index])
 end
 
 def move(board, index, token='X')
-  if valid_move?(board, index)
     board[index] = token
-  end
 end
 
 def turn(board)
   puts "Please enter 1-9:"
-  index = input_to_index(gets.chomp)
+  input = gets.chomp
+  index = input_to_index(input)
   if valid_move?(board, index)
     move(board, index)
     display_board(board)
   else
-    while !valid_move?(board, index)
-      puts "Please enter 1-9:"
-      index = input_to_index(gets.chomp)
-    end
-  end
-enddef display_board(arr)
-  row1= arr[0..2].join(' | ')
-  row2= arr[3..5].join(' | ')
-  row3= arr[6..8].join(' | ')
-  puts " #{row1} "
-  puts '-' * 11
-  puts " #{row2} "
-  puts '-' * 11
-  puts " #{row3} "
-end
-
-def input_to_index(str)
-  str.chomp.to_i - 1
-end
-
-def valid_move?(board, index)
-  (index).between?(0, 8) && !position_taken?(board, index)
-end
-
-def position_taken?(board, index)
-  blanks = ['', ' ', nil]
-  !blanks.include?(board[index])
-end
-
-def move(board, index, token='X')
-  if valid_move?(board, index)
-    board[index] = token
-  end
-end
-
-def turn(board)
-  puts "Please enter 1-9:"
-  index = input_to_index(gets.chomp)
-  if valid_move?(board, index)
-    move(board, index)
-    display_board(board)
-  else
-    while !valid_move?(board, index)
-      turn(board)
-    end
+    turn(board)
   end
 end
