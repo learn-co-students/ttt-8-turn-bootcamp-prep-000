@@ -110,10 +110,9 @@ describe './lib/turn.rb' do
       allow($stdout).to receive(:puts)
 
       expect(self).to receive(:gets).and_return("1")
-      expect(self).to receive(:valid_move?).with(board, 1).and_return(true)
+      expect(self).to receive(:valid_move?).with(board, 0).and_return(true)
 
       turn(board)
-
     end
 
     it 'asks for input again after a failed validation' do
