@@ -113,6 +113,7 @@ describe './lib/turn.rb' do
       expect(self).to receive(:valid_move?).with(board, 1).and_return(true)
 
       turn(board)
+
     end
 
     it 'asks for input again after a failed validation' do
