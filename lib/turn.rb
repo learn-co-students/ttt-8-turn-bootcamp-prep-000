@@ -11,12 +11,20 @@ def input_to_index(input)
 end
 
 def valid_move?(board, index)
-  if index >= 0 || index <=8
+  if index >= 0 && index <=8
     if !position_taken?(board, index)
       true
     end
   end
 
+end
+
+def position_taken?(board, index)
+  board[index] != " "
+end
+
+def move(board, index, player = "X")
+  board[index] = player
 end
 
 def turn(board)
@@ -29,12 +37,4 @@ def turn(board)
   else
     turn(board)
   end
-end
-
-def position_taken?(board, index)
-  board[index] != " "
-end
-
-def move(board, index, current_player = "X")
-  board[index] = current_player
 end
