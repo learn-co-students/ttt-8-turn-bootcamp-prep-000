@@ -45,9 +45,9 @@ def move(board, index, current_player = "X")
 end
 
 def play(board)
-  game = 1
-
-  until game == 9
+  turn_count = 0
+  while turn_count < 9
     turn(board)
+    turn_count+=1
   end
-end 
+end
