@@ -6,9 +6,9 @@ def turn(board)
   if valid_move?(board, index) == true
     move(board, index)
     display_board(board)
-  else 
+  else
     turn(board)
-  end 
+  end
 end
 def position_taken?(board, index)
   if (board[index] == "" || board[index] ==  " " || board[index] == nil)
@@ -43,3 +43,11 @@ end
 def move(board, index, current_player = "X")
   board[index] = current_player
 end
+
+def play(board)
+  game = 1
+
+  until game == 9
+    turn(board)
+  end
+end 
