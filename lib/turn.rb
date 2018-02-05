@@ -7,14 +7,12 @@ def display_board(board)
 end
 
 def valid_move?(board, index)
-  true_or_false = nil
   if index.between?(0, 8) &&
     (board[index] == " " || board[index] == "" || board[index] == nil)
-    true_or_false = true
+    return true
   else
-    true_or_false = false
+    return false
   end
-  return true_or_false
 end
 
 def move(board, players_move, players_character="X")
