@@ -6,12 +6,15 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-def turn(board, user_input)
+def turn(board)
   puts "Please enter 1-9:"
-  if index.between?(0, 8)
-    true
-  else 
-    puts "Please enter 1-9:"
+  input = gets
+  answer = input_to_index(input)
+  if valid_move?(board, answer)
+    move(board, answer)
+    display_board(board)
+else 
+  turn(board)
   end
 end
 
