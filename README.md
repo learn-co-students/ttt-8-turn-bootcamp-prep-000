@@ -1,5 +1,4 @@
 # Building a Tic Tac Toe Turn
-
 ## Objectives
 
 1. Build a method composed of the use of many methods ("helper methods") previously defined.
