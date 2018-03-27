@@ -4,10 +4,15 @@ def display_board(board)
 end
 
 def valid_move?(board, index)
+<<<<<<< HEAD
   if position_taken?(board, index)
     return false
   elsif index.between?(0, 8) 
     return true
+=======
+  if board[index] && index.between?(0, 8) 
+    return !position_taken?(board, index)
+>>>>>>> 8618b07c60089b70eb5bebffbc62b9c27fcc79a2
   end
 end
 
@@ -22,20 +27,33 @@ def input_to_index(input)
   return input.to_i - 1
 end
 
+<<<<<<< HEAD
 def move(board, index, character="X")
   board[index] = character
   display_board(board)
+=======
+def move(board, index, character='X')
+  board[index] = character
+  return board
+>>>>>>> 8618b07c60089b70eb5bebffbc62b9c27fcc79a2
 end
 
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
+<<<<<<< HEAD
   if valid_move?(board, index)
     move(board, index, character="X")
   else
     puts "Please make a valid move."
     turn(board)
   end
+=======
+  until valid_move?(board, index) do
+    turn(board)
+  end
+  puts move(board, index, character='X')
+>>>>>>> 8618b07c60089b70eb5bebffbc62b9c27fcc79a2
 end
 
