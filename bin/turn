@@ -1,1 +1,22 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+display_board(board)
+
+# move(board, 0, "O")
+# move(board, 8, "X")
+
+#expect(board).to eq(["O", " ", " ", " ", " ", " ", " ", " ", "X"])
+turn(board)
+
+#total_moves = 9
+#until total_moves == 9
+#  turn(board)
+#  total_moves += 1
+#end
+
+
