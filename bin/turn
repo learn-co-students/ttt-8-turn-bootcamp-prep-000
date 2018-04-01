@@ -1,1 +1,11 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn.rb';
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+puts "Welcome to Tic Tac Toe!";
+while (!board.all? {|a| a == "X" || a == "O"})
+  display_board(board);
+  turn(board);
+end
+
+puts "It's a scratch! Game Over!";
