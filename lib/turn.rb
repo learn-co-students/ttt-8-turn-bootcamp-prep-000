@@ -38,15 +38,12 @@ def move(board, index, mark="X")
 end
 
 
-
-
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.chomp
   input = input_to_index(input)
   
-  while true 
-  break if input >= 0 && input <= 8
+  until input >= 0 && input <= 8
     turn(board)
     break
   end
