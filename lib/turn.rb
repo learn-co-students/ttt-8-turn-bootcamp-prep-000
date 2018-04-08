@@ -24,13 +24,12 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  while x = input_to_index(gets)
-    if valid_move?(board, x) == true
-      break
-    else
-      false
-    end
+  input = gets.chomp
+  x = input_to_index(input)
+  if valid_move?(board, x)
+    move(board, x, current_player(board))
+    display_board(board)
+  else
+    turn(board)
   end
-  move(board, x)
-  display_board(board)
 end
