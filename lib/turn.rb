@@ -27,6 +27,8 @@ def turn(board)
   while x = input_to_index(gets)
     if valid_move?(board, x) == true
       break
+    else
+      false
     end
   end
   move(board, x)
