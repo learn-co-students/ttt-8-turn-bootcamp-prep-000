@@ -37,7 +37,8 @@ index = input_to_index(user_input)
   if !valid_move?(board, index)
     turn(board)
   else
+    puts "Please enter 1-9:"
   move(board, index, character = "X")
   display_board(board)
-  end
+ end
  end
