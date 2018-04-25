@@ -26,12 +26,10 @@ def turn(arr)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-
   if valid_move?(arr, index)
     move(arr, index, "X")
     display_board(arr)
   else
     turn(arr)
   end
-  
 end
