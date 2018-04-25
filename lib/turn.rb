@@ -18,7 +18,7 @@ def valid_move?(arr, ind)
   ( ind != -1 && ind.between?(0, 8) && position_taken?(arr, ind) ) ? true : false
 end
 
-def move(arr, ind, char)
+def move(arr, ind, char="X")
   arr[ind] = char
 end
 
@@ -27,7 +27,7 @@ def turn(arr)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(arr, index)
-    move(arr, index, "X")
+    move(arr, index)
     display_board(arr)
   else
     turn(arr)
