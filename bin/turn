@@ -1,1 +1,13 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+board = Array.new(9, ' ')
+char = 'X'
+
+puts "Welcome to Tic Tac Toe!"
+
+display_board(board)
+
+9.times do
+  char = turn(board, char)
+end
