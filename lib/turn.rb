@@ -21,6 +21,10 @@ end
 
 def move(board, index, player="X")
     board[index] = player
+def move(board, index, user="X")
+  if valid_move?(board, index)
+    board[index] = user
+  end
 end
 
 def turn(board)
