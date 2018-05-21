@@ -1,3 +1,18 @@
+def turn(board)
+  moved = false
+  
+  while moved==false
+    puts "Please enter 1-9:"
+    input = gets.strip()
+    index = input_to_index(input)
+    #board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    if valid_move?(board,index)
+      move(board,index)
+      return display_board(board)
+    end
+  end
+end
+
 def display_board(board)
    
   (0..6).step(3) do |n|
@@ -39,4 +54,4 @@ end
   
 #board = ["X", "X", "X", "X", "O", "O", "X", "O", "O"]
 #display_board(board)
-input_to_index("2")
+#input_to_index("2")
