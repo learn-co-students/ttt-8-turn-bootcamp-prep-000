@@ -24,17 +24,17 @@ def position_taken?(board, index)
 end
 
 
-def move(board, index, mark = "X") 
-  board[index] = mark
+def move(board, index, current_player = "X") 
+  board[index] = current_player
 end
 
 
 def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
-  input_integer = input_to_index(user_input)
-  if valid_move?(board, input_integer)
-    move(board, input_integer)
+  index = input_to_index(user_input)
+  if valid_move?(board, index)
+    move(board, index)
   else
     turn(board)
   end
