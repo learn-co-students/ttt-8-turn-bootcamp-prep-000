@@ -2,15 +2,14 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-  until valid_move?(board, index)
+  if valid_move?(board, index)
+    move(board, index)
+    display_board(board)
+  else
     turn(board)
   end
-  puts "I entered #{input} in response to the gets prompt."
-  move(board, index)
-  display_board(board)
-  
-    
 end
+    
 
 
 def display_board(board)
@@ -45,7 +44,5 @@ def position_taken?(board, index)
     return false
   elsif board[index] == "X" || board[index] == "O"
     return true
-  else 
-    return false
   end
 end
