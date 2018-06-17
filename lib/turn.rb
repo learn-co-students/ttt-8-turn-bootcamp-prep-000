@@ -37,13 +37,11 @@ def turn(board)
   index = input_to_index(input)
   
   valid_move?(board, index)
-  while false
-    turn(board)
-  end
+  
   
   move(board, index, value = "X")
     
-    
+  display_board(board)  
   
 end
 
