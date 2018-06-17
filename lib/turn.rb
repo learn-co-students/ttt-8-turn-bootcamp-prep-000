@@ -39,7 +39,9 @@ def turn(board)
   valid_move?(board, index)
   while false
     turn(board)
-  else
+  end
+  
+  move(board, index, value = "X")
     
     
   
