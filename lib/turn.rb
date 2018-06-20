@@ -22,6 +22,7 @@ def valid_move?(board_arr, index)
       return true
     end
   end
+  puts "invalid"
   return false
 end
 
@@ -32,15 +33,13 @@ end
 
 # the turn method
 def turn(board_arr)
-  display_board(board_arr)
   puts "Please enter 1-9:"
   user_input = input_to_index(gets.strip())
-  
   if valid_move?(board_arr, user_input)
     move(board_arr, user_input)
     display_board(board_arr)
   else
     puts "invalid"
+    turn(board_arr)
   end
-  
 end
