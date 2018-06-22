@@ -1,1 +1,23 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+# Define Playing Board
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+# Output Initial Text
+puts "Welcome to Tic Tac Toe!"
+
+# Display the board
+display_board(board)
+
+# Run next turn
+game_completed = false
+player = "X"
+until game_completed do
+  turn(board, player)
+  if player == "X"
+    player = "O"
+  else
+    player = "X"
+  end
+end
