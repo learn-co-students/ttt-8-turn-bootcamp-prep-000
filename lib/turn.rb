@@ -3,14 +3,16 @@ def move(board, input, player = "X")
   display_board(board)
 end
 
-def turn(board)
+def turn(board, player = "X")
   valid = false
   until valid do
     puts "Please enter 1-9:"
     input = gets.strip
     input = input_to_index input
-    move(board, input)
-    valid = true
+    if valid_move?(board, input)
+      move(board, input, player)
+      valid = true
+    end
   end
 end
 
