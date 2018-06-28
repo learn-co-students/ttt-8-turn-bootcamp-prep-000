@@ -1,9 +1,7 @@
 def turn(board)
   puts "Please enter 1-9:"
   integer = gets.strip
-  input_to_index(integer)
-  index = integer.to_i
-  index -= 1
+  index = input_to_index(integer)
   
   if valid_move?(board, index)
     puts "You chose position #{integer}."
