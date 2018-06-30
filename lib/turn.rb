@@ -1,15 +1,22 @@
 def turn(board)
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
+  # Note: This is the loop version of #turn.
+  # See the TicTacToe.rb lab for the more elegant recursion version of #turn.
   
-  if valid_move?(board, index) == true
-    move(board, index)
-    display_board(board)
-  else
-    puts "Sorry. Invalid move. Try again."
-    turn(board)
+  move_is_valid = false 
+  
+  until move_is_valid
+    puts "Please enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+    
+    if valid_move?(board, index) == true
+      move_is_valid = true
+    else
+      puts "Sorry. Invalid move. Try again."
+    end
   end
+  move(board, index)
+  display_board(board)
 end
 
 def display_board(board)
