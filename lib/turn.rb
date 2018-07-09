@@ -6,6 +6,14 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
+def input_to_index(input)
+  index = "#{index}".to_i - 1
+end
+
+def move(array, position, player="X")
+  array[position] = player
+end
+
 def valid_move?(board, index)
   if index.between?(0, 8) && (board[index] != "X" && board[index] != "O")
     return true
