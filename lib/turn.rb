@@ -37,11 +37,12 @@ def valid_move?(board,index)
 end
 
 def turn(board)
-  puts "Enter a number from 1-9:"
-  number = gets.stick
-  number = input_to_index(number)
-  if valid_move?(board,number) == true
-    move(board,number)
+  puts "Please enter 1-9:"
+  number = gets.strip
+  index = input_to_index(number)
+  if valid_move?(board,index)
+    move(board,index)
+    display_board(board)
   else
     turn(board)
   end 
