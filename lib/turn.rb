@@ -45,7 +45,4 @@ def turn(board)
     turn(board)
   end
   
-  #looping implementation
-  until 
-  
 end
