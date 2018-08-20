@@ -7,22 +7,19 @@ def display_board(board)
 end
 
 def position_taken?(board, index)
-  if board[index] == " " || board[index] == "" || board[index] == nil
-    return false
-  else
-    return true
-  end
+  space = board[index]
+  !space.strip.empty? && !space.nil?
 end
 
 def valid_move?(board, index)
   if index.to_i.between?(0, 8) == true 
     if position_taken?(board, index) == true
-      return false
+      false
     else
-      return true
+      true
     end
   else
-    return false
+    false
   end 
 end
 
@@ -32,7 +29,7 @@ end
 
 def move(board, i, char = "X")
   board[i] = char
-  return board
+  board
 end 
 
 def turn(board)
