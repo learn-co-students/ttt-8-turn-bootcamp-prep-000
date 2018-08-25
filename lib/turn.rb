@@ -26,13 +26,15 @@ def valid_move?(board, index)
 end
 
 def position_taken?(board, index)
-  if (board[index] == "X") || (board[index] == "O")
-    true
-  elsif (board[index] ==  " " || board[index] == "" || board[index] == nil)
+  if (board[index] ==  " " || board[index] == "" || board[index] == nil)
     false
+  else
+    true
   end
 end
-
+#advanced solution w/ ternary op (?; false : true)
+#(board[index] ==  " " || board[index] == "" || board[index] == nil)
+#false : true
 
 def turn(board)
   puts "Please enter 1-9:"
