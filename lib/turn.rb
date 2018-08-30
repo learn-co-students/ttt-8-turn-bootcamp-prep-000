@@ -6,10 +6,26 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 def input_to_index(user_input)
   user_input.to_i - 1
+end
+
+
+def valid_move?(board, index)
+  if index.between?(0, 8) && !position_taken?(board, index)
+    true
+  else
+  end
+end
+
+
+def position_taken?(board, index)
+  if (board[index] == "X") || (board[index] == "O")
+    true
+  elsif (board[index] === "" || " " || nil)
+    false
+  end
 end
 
 
@@ -17,24 +33,6 @@ def move(board, index, player = "X")
   board[index] = player
 end
 
-board
-
-def valid_move?(board, index)
-  if !position_taken?(board, index) && index.between?(0, 8)
-    true
-  end
-end
-
-def position_taken?(board, index)
-  if (board[index] ==  " " || board[index] == "" || board[index] == nil)
-    false
-  else
-    true
-  end
-end
-#advanced solution w/ ternary op (?; false : true)
-#(board[index] ==  " " || board[index] == "" || board[index] == nil)
-#false : true
 
 def turn(board)
   puts "Please enter 1-9:"
@@ -43,7 +41,7 @@ def turn(board)
   if valid_move?(board, index)
     move(board, index)
     display_board(board)
-   else
+  else
     turn(board)
-    end
+  end
 end
