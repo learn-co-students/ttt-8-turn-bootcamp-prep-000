@@ -22,7 +22,7 @@ def move(board, index, player = "X")
 end
 
 def valid_move?(board, index)
-  !position_taken?(board, index) && index >= 0 && index < 9
+  index >= 0 && index < 9 && !position_taken?(board, index)
 end
 
 def position_taken?(board, index)
