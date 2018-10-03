@@ -40,7 +40,6 @@ def turn(board)
     move(board, index)
     display_board(board)
   else
-    puts "Invalid input. Please enter 1-9:"
-    user_input = gets.chomp
+    turn(board) # recursion
   end
 end
