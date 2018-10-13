@@ -9,8 +9,9 @@ display_board(board)
 
 turn(board)
 
-ask for input
-get input
+"Please enter 1-9:
+name = gets.strip
+greeting(name)
 convert input to index
 if index is valid
   make the move for index
