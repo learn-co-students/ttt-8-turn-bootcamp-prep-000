@@ -66,7 +66,7 @@ def turn_count(board)
 end
 
 def won?(board)
- WIN_COMBINATIONS.detect do |combo|
+ victory_combos.detect do |combo|
     element_1 = combo[0]
     element_2 = combo[1]
     element_3 = combo[2]
@@ -82,7 +82,6 @@ def full?(board)
    index == "X" || index == "O"
   end
  end
-
 def draw?(board)
  full?(board) && !won?(board)
 end
