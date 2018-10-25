@@ -1,0 +1,7 @@
+if valid_move?(board, index)  
+       move(board, user_input, value = "X") 
+      puts "#{board}"
+    else 
+      turn(board)
+      until valid_move?(board, index)
+    end
