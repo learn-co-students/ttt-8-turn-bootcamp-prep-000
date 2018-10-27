@@ -39,7 +39,6 @@ def turn(board)
     move(board, index)
     display_board(board)
   else
-    puts "Please enter a valid number 1-9:"
     turn(board)
   end
 end
