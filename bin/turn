@@ -1,1 +1,9 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn'
+
+array = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+display_board(array)
+turn(array)
