@@ -1,1 +1,18 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+
+board = [
+  " "," "," ",
+  " "," "," ",
+  " "," "," "
+]
+
+gameOver = FALSE
+
+
+puts "Welcome to Tic Tac Toe!"
+displayBoard(board)
+
+while gameOver == FALSE do
+  turn(board)
+end
