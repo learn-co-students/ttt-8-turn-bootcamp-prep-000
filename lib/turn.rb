@@ -35,6 +35,12 @@ def valid_move?(board, index)
   end
 end
 
-def turn
+def turn(input)
   puts "Please enter 1-9:"
+  input = gets
+  index = input_to_index(input)
+    if valid_move?(board, index)
+      move
+    else
+      puts "Invalid move, please try again."
 end
