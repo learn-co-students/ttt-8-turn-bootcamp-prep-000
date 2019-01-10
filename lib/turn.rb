@@ -39,11 +39,13 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  input = gets
-  index = input_to_index(input)
-    if valid_move?(board, index)
-      move(board, index, a_value)
-    else
-      puts "Invalid move, please try again."
+  loop do 
+    input = gets
+    index = input_to_index(input)
+      if valid_move?(board, index)
+        move(board, index, a_value)
+      else
+        puts "Invalid move, Please enter 1-9:"
     end
+  end
 end
