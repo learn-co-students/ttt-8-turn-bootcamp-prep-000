@@ -5,4 +5,6 @@ board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 puts "Welcome to Tic Tac Toe!"
 display_board(board)
+
+Puts "Choose a square, 1-9"
 turn(board)

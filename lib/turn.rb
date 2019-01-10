@@ -1,3 +1,4 @@
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -25,6 +26,7 @@ end
 #when user selects square and token (ie X or O), update board array
 def move(board, index, value = "X")
   board[index] = value
+  board
 end
 
 
@@ -35,12 +37,13 @@ def valid_move?(board, index)
   end
 end
 
-def turn(input)
+def turn(board)
   puts "Please enter 1-9:"
-  # input = gets
-  # index = input_to_index(input)
-  #   if valid_move?(board, index)
-  #     move
-  #   else
-  #     puts "Invalid move, please try again."
+  input = gets
+  index = input_to_index(input)
+    if valid_move?(board, index)
+      move(board, index, a_value)
+    else
+      puts "Invalid move, please try again."
+    end
 end
