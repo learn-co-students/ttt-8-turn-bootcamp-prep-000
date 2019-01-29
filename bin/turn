@@ -1,1 +1,17 @@
 #!/usr/bin/env ruby
+
+#  load a file from a relative path to the current file. 
+#  dont need .rb extension to a path for require_relative. 
+#  Ruby assumes you mean a .rb file.
+
+require_relative '../lib/turn'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+
+# move(board, 4, "X")      # hard coded pre-move
+# move(board, 0, "O")      # hard coded pre-move
+
+display_board(board)
+turn(board)
