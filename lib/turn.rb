@@ -13,5 +13,29 @@ def input_to_index(int)
 end
 
 def move(board, index, value = "X") 
-  puts board[index] = value
+    return board[index] = value
 end
+
+def valid_move?(board, index) 
+  if (index <= 8 && index >= 0)
+    return !position_taken?(board, index)
+  end
+end
+
+def position_taken?(board, index)
+  board[index] != " "
+end
+
+def turn(board) 
+  puts "Please enter 1-9:"
+  num = gets
+  index = input_to_index(num)
+  if (valid_move?(board, index))
+    move(board, index)
+  else 
+    turn(board)
+  end
+  display_board(board)
+end
+
+
