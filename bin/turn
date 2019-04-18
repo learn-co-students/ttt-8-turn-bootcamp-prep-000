@@ -1,1 +1,12 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn'
+
+board = Array.new(CELLS, ' ')
+
+puts "Welcome to Tic Tac Toe!"
+display_board(board)
+
+loop do
+  turn(board)
+end
