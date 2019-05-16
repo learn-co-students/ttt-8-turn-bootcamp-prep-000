@@ -1,1 +1,15 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/turn.rb'
+require_relative '../lib/display_board.rb'
+
+puts "Welcome to Tic Tac Toe!"
+
+board = Array.new(9," ")
+
+display_board(board)
+
+turn(board)
+turn(board)
+turn(board)
+
