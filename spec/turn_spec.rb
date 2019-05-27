@@ -110,7 +110,6 @@ describe './lib/turn.rb' do
       allow($stdout).to receive(:puts)
 
       expect(self).to receive(:gets).and_return("1")
-      expect(self).to receive(:valid_move?).with(board, 0).and_return(true)
 
       turn(board)
     end
