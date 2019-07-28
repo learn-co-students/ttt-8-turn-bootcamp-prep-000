@@ -13,13 +13,27 @@ def input_to_index(user_input)
   conv
 end
 
-def valid_move?(board, index)
-
+def position_taken?(board, index)
+  if board[index] == '' || board[index] == ' ' || nil?
+    false
+  else
+    true
+  end
 end
 
-def turn(board)
+
+def move(board, index, token = 'X')
+  board[index] = token
+end
+
+
+def valid_move?(board, index)
+  !position_taken?(board, index) && index.between?(0, 8)
+end
+
+
+def turn(*)
 
   puts 'Please enter 1-9: '
-
 
 end
