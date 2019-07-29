@@ -21,19 +21,23 @@ def position_taken?(board, index)
   end
 end
 
-
 def move(board, index, token = 'X')
   board[index] = token
 end
-
 
 def valid_move?(board, index)
   !position_taken?(board, index) && index.between?(0, 8)
 end
 
+def turn(board)
+  puts 'Please enter 1-9:'
 
-def turn(*)
+  user_input = gets.chomp
+  index = input_to_index(user_input)
 
-  puts 'Please enter 1-9: '
+   valid_move?(board, index ) ? move(board, index, token = 'X') : turn(board)
+
+   display_board(board)
+
 
 end
