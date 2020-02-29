@@ -9,10 +9,11 @@ puts
 
 puts "Please enter 1-9:"
 
+puts
  
-#move(board, 4, "X")
-#move(board, 0, "O")
-#move(board, 1, "X")
+move(board, 4, "X")
+move(board, 0, "O")
+move(board, 1, "X")
  
 display_board(board)
  

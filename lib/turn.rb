@@ -55,27 +55,16 @@ def turn(board)
   var = input_to_index(user_input) #converts input to index
   if valid_move?(board,var) == true #if indec is valid/make move
     move(board, var , c3 = "X")
-  until(valid_move?(board,var) == true) do
-     turn(board)
-    end
-  end
+    display_board(board)
+  else 
+    puts "this spot is invalid"
+    display_board(board)
+    turn(board)
+  end 
 end
 
-# if (tickFormat.length > 12 && tickFormat.length < 24)
-#   i = 1
-#   while(i < tickFormat.length) do
-#     if (i%2 != 0)
-#       tickFormat.at(i)[1] = ''
-#     end
-#     i += 1
-#   end
-# end
-
-
-
-
-
-#get input
+    
+    #get input
 #convert input to index
 #if index is valid
   #make the move for input
