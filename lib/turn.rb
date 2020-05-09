@@ -49,13 +49,16 @@ user_input = gets
 
 index = input_to_index(user_input)
 
-if valid_move?(board, index)
-  puts display_board(board)
+if valid_move?(board, index) == true
+  move(board, index, character="X")
+  display_board(board)
 
-else until valid_move?(board, index) == true
+else #until valid_move?(board, index) == true
   puts "Please enter 1-9:"
-  
-end
+
+  user_input = gets
+
+#end
 end
 
 end
