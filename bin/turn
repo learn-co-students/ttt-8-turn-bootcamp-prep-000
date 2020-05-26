@@ -16,7 +16,7 @@ index = input_to_index(input)
 #Now we're ready to call our #move method. Do so with the arguments of the `board`, the `index` the user wants to access and the default player of `"X"`.
 move(board, index, char="X")
 
-#Lastly, display the board by calling the `#display_board` method, passing in the necessary arguments required to run this method.
+#Display the board by calling the `#display_board` method, passing in the necessary arguments required to run this method.
 display_board(board)
 
 turn(board)

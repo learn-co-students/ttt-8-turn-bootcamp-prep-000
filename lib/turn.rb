@@ -1,5 +1,3 @@
-def turn(board)
-
   def display_board(board)
     puts " #{board[0]} | #{board[1]} | #{board[2]} "
     puts "-----------"
@@ -29,10 +27,14 @@ def turn(board)
       return false
     elsif board[index] == "X" || board[index] == "O"
       return true
-    else  board[index] == nil
+    else  board[index == nil
       return false
     end
   end
 
-
+def turn(board)
+  puts "Please enter 1-9:"
+  input=gets.chomp
+  input_to_index
+   
 end
