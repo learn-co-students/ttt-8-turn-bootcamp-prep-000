@@ -1,1 +1,22 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+#establish the starting state of the game, i.e. the empty board
+board = [" "," "," "," "," "," "," "," "," "]
+
+#Where would you like to go?
+puts "Where would you like to go?"
+
+
+#We need to store the user's input. Use `gets.strip` to store their input to a variable, `input`.
+input = gets.strip
+
+#Now we want to convert the user's input to an array index using our `#input_to_index` method and store this as the variable `index`.
+index = input_to_index(input)
+
+#Now we're ready to call our #move method. Use arguments for the `board`, the `index`, and the default player of `"X"`.
+move(board, index, char="X")
+
+#Display the board by calling the `#display_board` method.
+display_board(board)
+
+turn(board)
