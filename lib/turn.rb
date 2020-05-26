@@ -10,7 +10,7 @@
     input.to_i - 1 
   end
 
-  def move(board,index,char=("X") 
+  def move(board,index,char="X") 
     board[index] = char 
   end
 
@@ -27,15 +27,22 @@
       return false
     elsif board[index] == "X" || board[index] == "O"
       return true
-    else  board[index == nil
+    else  board[index] == nil
       return false
     end
   end
 
-def turn(board)
+  def turn(board)
   
-  puts "Please enter 1-9:"
-  input = gets.chomp
-  input_to_index
-   
-end
+    puts "Please enter 1-9:"
+    input = gets.chomp
+    index = input_to_index(input)
+    
+      if valid_move? == true
+        do #........
+        display_board(board)
+        puts "Please enter 1-9:"
+      else
+        puts "Please enter 1-9:"
+    end
+  end

@@ -13,10 +13,10 @@ input = gets.strip
 #Now we want to convert the user's input to an array index using our `#input_to_index` method and store this as the variable `index`.
 index = input_to_index(input)
 
-#Now we're ready to call our #move method. Do so with the arguments of the `board`, the `index` the user wants to access and the default player of `"X"`.
+#Now we're ready to call our #move method. Use arguments for the `board`, the `index`, and the default player of `"X"`.
 move(board, index, char="X")
 
-#Display the board by calling the `#display_board` method, passing in the necessary arguments required to run this method.
+#Display the board by calling the `#display_board` method.
 display_board(board)
 
 turn(board)
