@@ -38,11 +38,11 @@
     input = gets.chomp
     index = input_to_index(input)
     
-      if valid_move? == true
-        do #........
+      if valid_move?(board,index) == true
+        move(board, index, "X")
         display_board(board)
         puts "Please enter 1-9:"
-      else
-        puts "Please enter 1-9:"
+      else 
+        turn(board)
     end
   end
