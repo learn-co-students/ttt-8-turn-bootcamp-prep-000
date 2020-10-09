@@ -1,1 +1,11 @@
 #!/usr/bin/env ruby
+# load the turn.rb file to use (no need to put .rb)
+require_relative '../lib/turn'
+# create board array to hold moves
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+# welcomes the player to tic tac toe
+puts "Welcome to Tic Tac Toe!"
+#displays the board with #display_board method
+display_board(board)
+# runs the #turn method with passing board array
+turn(board)
