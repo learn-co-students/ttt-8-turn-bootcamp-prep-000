@@ -1,1 +1,38 @@
 #!/usr/bin/env ruby
+#goal- ask user for their move by position 1-9
+#receive the user input
+#convert position to an index
+#check if move is valid, make the move and display board to user
+#check if move is invalid, ask for new move until its valid
+
+
+require_relative '../lib/turn'
+
+
+#Welcomes the player to the game
+#displays & stores array used to keep track of the state of the board
+#call methad that encapsulates procedure of the users turn
+
+board = Array.new(9, " ")
+
+turn(board)
+
+
+#captures users input and stores it into input
+#convert the user's input to an array index using method and store it in index
+#call move method passing in agruments
+#display the current state of the board
+
+user_input = gets.strip.to_i
+
+input_to_index("number")
+
+
+#hard code pre-filled position on the board to be executed before the game & existing turn adds a 3rd token to the board. 
+move(board, 4, "X")
+move(board, 6, "O")
+move(board, 1, "X")
+
+display_board(board)
+
+turn(board)
