@@ -1,1 +1,15 @@
 #!/usr/bin/env ruby
+require_relative '../lib/turn'
+# don't need to add .rb extension, Ruby assumes you mean a .rb file
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+puts "Welcome to Tic Tac Toe!"
+display_board(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
+turn(board)
